@@ -24,8 +24,8 @@ def dati_set():
     print(tutto)
     file=open("dati.txt","w")
     file.write(str(tutto))
-    
     file.write(str(comprleto))
+    data_set()
 def invia_key():
     io=socket.socket()
     io.bind(("12.0.0.1",8900))
